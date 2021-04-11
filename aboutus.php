@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+    <h1>test remote</h1>
     <div class="jumbotron jumbotron-fluid" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('img/bg.jpg'); background-size:cover; height:45vh;">
         <nav class="navbar navbar-expand-lg navbar">
