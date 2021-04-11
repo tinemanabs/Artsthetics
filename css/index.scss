@@ -1,7 +1,7 @@
 $phone: 640px;
-$font-color: #986545 ;
-$secondary-color:#c5847e ;
-$third-color: #F5F1E5;
+$font-color: #986545;
+$secondary-color: #c5847e;
+$third-color: #f5f1e5;
 
 body {
     font-family: "Montserrat", sans-serif !important;
@@ -56,14 +56,13 @@ body {
             }
         }
     }
-} 
+}
 
 @media (max-width: $phone) {
-    .index-container{
-        
-        .row{
+    .index-container {
+        .row {
             display: grid;
-            grid-template-rows: repeat(1,1fr);
+            grid-template-rows: repeat(1, 1fr);
             justify-content: center;
             align-items: center;
             .col-1 {
@@ -73,7 +72,7 @@ body {
                     text-align: center !important;
                     width: 25rem;
                 }
-    
+
                 h3 {
                     font-size: 1.5rem !important;
                     color: #707070;
@@ -84,150 +83,220 @@ body {
             }
         }
 
-        .col-2{
+        .col-2 {
             display: none !important;
         }
     }
 }
 
-/*
-.popup .content {
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -150%) scale(0);
-    width: 800px;
-    height: 600px;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    background: wheat;
-    box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
-    z-index: 1;
+//FORMS
+
+.popup {
+    .content {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -150%) scale(0);
+        width: 25rem;
+        height: 30rem;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+        border-radius: 20px;
+        z-index: 1;
+        border-radius: 50px;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 5px 5px 5px 5px #e0e0e0;
+
+        .close-btn {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            color: black;
+            font-size: 30px;
+            border-radius: 50%;
+            padding: 2px 5px 7px 5px;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $third-color;
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        img{
+            height: 100px;
+            width: 130px;
+        }
+
+        .title{
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .caption{
+            font-weight: 300;
+            padding-bottom: 1rem;
+        }
+
+        .input-field{
+            padding: 0.5rem;
+
+            .validate{
+                padding: 0rem 0.5rem;
+                border-radius: 10px;
+                border: 2px solid #707070;
+                height: 3rem;
+                font-size: 1.3;
+
+                &:hover{
+                    border: 3px solid $font-color;
+                }
+            }
+        }
+
+        .second-button{
+            background-color: $font-color;
+            color: white;
+            height: 2.5rem;
+            width: 6rem;
+            border-radius: 10px;
+            margin: 1rem 0rem;
+            border: 2px solid $font-color;
+
+            &:hover{
+                background-color: white;
+                color: $font-color;
+            }
+        }
+
+        .signup{
+            color: #707070;
+            font-weight: 700;
+        }
+
+        .confirmData{
+            padding: 0.5rem 0rem;
+            font-size: 1rem;
+            color: rgb(240, 100, 100);
+            font-weight: 700;
+        }
+    }
+
+
 }
 
-.popup .close-btn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 30px;
-    height: 30px;
-    color: black;
-    font-size: 30px;
-    border-radius: 50%;
-    padding: 2px 5px 7px 5px;
-    background: wheat;
-}
+
 .popup.active .content {
     transition: all 300ms ease-in-out;
-    transform: translate(-50%, -50%) scale(1);
-}
-.poppop .contents {
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -150%) scale(0);
-    width: 400px;
-    height: 600px;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
-    z-index: 1;
-}
-.poppop .close-bttn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 30px;
-    height: 30px;
-    color: red;
-    font-size: 30px;
-    border-radius: 50%;
-    padding: 2px 5px 7px 5px;
-    background: white;
-    box-shadow: 5px 5px 15px white, -5px -5px 15px white;
+    transform: translate(-50%, -120%) scale(1);
 }
 
-.poppop.active .contents {
+.sign-up-popup {
+    .content {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -150%) scale(0);
+        width: 25rem;
+        height: 42rem;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+        border-radius: 20px;
+        z-index: 1;
+        border-radius: 50px;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 5px 5px 5px 5px #e0e0e0;
+
+        .close-btn {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            color: black;
+            font-size: 30px;
+            border-radius: 50%;
+            padding: 2px 5px 7px 5px;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $third-color;
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        img{
+            height: 100px;
+            width: 130px;
+        }
+
+        .title{
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .caption{
+            font-weight: 300;
+            padding-bottom: 1rem;
+        }
+
+        .input-field{
+            padding: 0.5rem;
+
+            .validate{
+                padding: 0rem 0.5rem;
+                border-radius: 10px;
+                border: 2px solid #707070;
+                height: 2rem;
+                font-size: 1.3;
+
+                &:hover{
+                    border: 3px solid $font-color;
+                }
+            }
+        }
+
+        .second-button{
+            background-color: $font-color;
+            color: white;
+            height: 2rem;
+            width: 5rem;
+            border-radius: 10px;
+            margin: 1rem 0rem;
+            border: 2px solid $font-color;
+
+            &:hover{
+                background-color: white;
+                color: $font-color;
+            }
+        }
+
+        .signup{
+            color: #707070;
+            font-weight: 700;
+        }
+
+        .confirmData{
+            padding: 0.5rem 0rem;
+            font-size: 1rem;
+            color: rgb(240, 100, 100);
+            font-weight: 700;
+        }
+    }
+
+
+}
+
+
+.sign-up-popup.active .content {
     transition: all 300ms ease-in-out;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -96%) scale(1);
 }
-
-h1 {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-a {
-    font-weight: 600;
-    color: white;
-}
-
-.input-field .validate {
-    padding: 20px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    margin-bottom: 15px;
-    color: #bfc0c0;
-    background: #262626;
-    box-shadow: inset 5px 5px 5px white, inset -5px -5px 5px white;
-    outline: none;
-}
-
-.first-button {
-    color: white;
-    font-size: 15px;
-    font-weight: 200;
-    padding: 15px 50px;
-    border-radius: 30px;
-    border: none;
-    position: absolute;
-    top: 130%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(#ff54a2, #ff575a);
-    box-shadow: 18px 18px 25px white, -15px -15px 25px white;
-    transition: box-shadow 0.35s ease !important;
-    outline: none;
-}
-
-.first-button:active {
-    background: linear-gradient(145deg, red, red);
-    box-shadow: 5px 5px 10px red, -5px -5px 10px red;
-    border: none;
-}
-
-.second-button {
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 20px;
-    padding: 20px 30px;
-    border-radius: 40px;
-    border: none;
-    background: #262626;
-    box-shadow: 8px 8px 15px #202020, -8px -8px 15px #2c2c2c;
-    transition: box-shadow 0.35s ease !important;
-    outline: none;
-}
-
-.second-button:active {
-    background: linear-gradient(145deg, red, #292929);
-    box-shadow: 5px 5px 10px red, -5px -5px 10px red;
-    border: none;
-    outline: none;
-}
-p {
-    color: black;
-    padding: 20px;
-} */
-
-//SIGNUP//

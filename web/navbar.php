@@ -26,10 +26,10 @@
                         <a class="nav-link" href="aboutus.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
+                        <a class="nav-link" href="#" onclick="togglePopup()">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
+                        <a class="nav-link" href="#" onclick="toggleSignUp() ">Sign Up</a>
                     </li>
                 </ul>
             </div>
