@@ -24,16 +24,17 @@
 }
 
 #profileIcon {
-  font-size: 2.8em;
+  font-size: 2.3em;
   text-decoration: none;
   color: #e7ddc0;
-  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 #homeIcon {
-  font-size: 1.4em;
+  font-size: 1.8em;
   text-decoration: none;
-  color: white;
+  color: #986545;
 }
 
 .navbar-brand img {

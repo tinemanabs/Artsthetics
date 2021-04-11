@@ -1,0 +1,285 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #986545;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-nav .nav-item .nav-link-phone {
+  display: none !important;
+}
+
+#homeText {
+  display: none !important;
+}
+
+#profileIcon {
+  font-size: 2.3em;
+  text-decoration: none;
+  color: #986545;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+#homeIcon {
+  color: #e7ddc0;
+  font-size: 1.8em;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 100px;
+  width: 130px;
+}
+
+@media (max-width: 640px) {
+  .navbar-nav {
+    margin-left: 1rem;
+  }
+  .navbar-nav .nav-item {
+    padding-bottom: 0.5rem;
+  }
+  .navbar-nav .nav-item .nav-link,
+  .navbar-nav .nav-item .nav-link-phone {
+    color: #986545;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .navbar-nav .nav-item .nav-link-phone {
+    display: block !important;
+  }
+  .navbar-nav .nav-item a:hover:not(.active) {
+    border-radius: 10px;
+    border: 3px solid #f5f1e5;
+    color: #986545;
+    -webkit-transition: all 1ms ease;
+    transition: all 1ms ease;
+  }
+  .navbar-nav .nav-item #active {
+    background-color: #986545;
+    border-radius: 10px;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    display: block !important;
+  }
+  #homeText {
+    display: block !important;
+  }
+  #profileIcon,
+  #homeIcon,
+  #popup-profile {
+    display: none !important;
+  }
+  #navbarNavDropdown,
+  .navbar-toggler {
+    background-color: #f5f1e5;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}
+
+.profile-popup .content {
+  position: absolute;
+  top: 35%;
+  left: 88%;
+  -webkit-transform: translate(-50%, -150%) scale(0);
+          transform: translate(-50%, -150%) scale(0);
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+  padding: 1rem 0rem;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #f5f1e5;
+  -webkit-box-shadow: 2px 2px 2px 2px #e0e0e0;
+          box-shadow: 2px 2px 2px 2px #e0e0e0;
+}
+
+.profile-popup .content ul li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 0.5rem;
+}
+
+.profile-popup .content ul li i {
+  margin-right: 0.5rem;
+  margin-top: 0.3rem;
+  color: #986545;
+}
+
+.profile-popup .content ul li a {
+  text-decoration: none;
+  color: #986545;
+  font-size: 1rem;
+}
+
+.profile-popup.active .content {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform: translate(-30%, -100%) scale(1);
+          transform: translate(-30%, -100%) scale(1);
+}
+
+.edit-profile {
+  padding: 0rem 10rem;
+}
+
+.edit-profile .edit-profile-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10fr 30fr;
+      grid-template-columns: 10fr 30fr;
+}
+
+.edit-profile .edit-profile-container .edit-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.edit-profile .edit-profile-container .edit-image .profile-image {
+  padding-bottom: 2rem;
+}
+
+.edit-profile .edit-profile-container .edit-image .profile-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.edit-profile .edit-profile-container .edit-image .upload-image-btn {
+  padding: 1.5rem 0rem 3rem 0rem;
+  text-align: center;
+}
+
+.edit-profile .edit-profile-container .edit-image .upload-image-btn .upload-image {
+  height: 2.5rem;
+  background-color: #c5847e;
+  border: 2px solid #c5847e;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.edit-profile .edit-profile-container .edit-image .upload-image-btn .upload-image:hover {
+  background-color: transparent;
+  border: 2px solid #c5847e;
+  color: #c5847e;
+}
+
+.edit-profile .edit-profile-container .edit-info {
+  padding: 0rem 2rem;
+}
+
+.edit-profile .edit-profile-container .edit-info .edit-info-container .edit-info-header {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.edit-profile .edit-profile-container .edit-info .edit-info-container .edit-info-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.edit-profile .edit-profile-container .edit-info .edit-container-grid .form-control {
+  border: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 15fr;
+      grid-template-columns: 5fr 15fr;
+  margin: 1rem 0rem;
+}
+
+.edit-profile .edit-profile-container .edit-info .edit-container-grid .form-control .input-control {
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border: 1px solid #f5f1e5;
+  background-color: #f5f1e5;
+}
+
+.edit-profile .edit-profile-container .edit-info .form-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.edit-profile .edit-profile-container .edit-info .form-btn .btn-form {
+  margin: 0rem 0.5rem 1.3rem 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.edit-profile .edit-profile-container .edit-info .form-btn .btn-form:hover {
+  background-color: white !important;
+  border: 1px solid #c5847e;
+  color: #c5847e !important;
+}
+
+.edit-profile .edit-profile-container .edit-info .form-btn #submit {
+  background-color: #c5847e;
+  color: white;
+}
+
+.edit-profile .edit-profile-container .edit-info .form-btn #back:hover {
+  background-color: white !important;
+  border: 1px solid #EFEFEF;
+  color: black !important;
+}
+
+@media (max-width: 640px) {
+  .edit-profile {
+    padding: 0rem 1rem;
+  }
+  .edit-profile .edit-profile-container {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .edit-profile .edit-profile-container .form-control {
+    -ms-grid-columns: 10fr 5fr !important;
+        grid-template-columns: 10fr 5fr !important;
+  }
+  .edit-profile .edit-profile-container .form-control .input-control {
+    width: 10rem;
+  }
+}
+/*# sourceMappingURL=editprofile.css.map */

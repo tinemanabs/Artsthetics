@@ -1,0 +1,289 @@
+$phone: 640px;
+$font-color: #986545;
+$secondary-color: #c5847e;
+$third-color: #f5f1e5;
+$font-face: 'Montserrat', sans-serif;
+
+body{
+    font-family: $font-face;
+}
+// NAVBAR USER
+.navbar-nav {
+    margin-left: auto;
+
+    .nav-item {
+        .nav-link {
+            color: $font-color;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-link-phone {
+            display: none !important;
+        }
+    }
+}
+
+#homeText {
+    display: none !important;
+}
+
+#profileIcon {
+    font-size: 2.3em;
+    text-decoration: none;
+   color: $font-color;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+#homeIcon {
+    color: darken($color: $third-color, $amount: 10);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    img {
+        height: 100px;
+        width: 130px;
+    }
+}
+
+@media (max-width: $phone) {
+    .navbar-nav {
+        margin-left: 1rem;
+
+        .nav-item {
+            padding-bottom: 0.5rem;
+            .nav-link,
+            .nav-link-phone {
+                color: $font-color;
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-decoration: none;
+            }
+
+            .nav-link-phone {
+                display: block !important;
+            }
+            a:hover:not(.active) {
+                border-radius: 10px;
+                border: 3px solid $third-color;
+                color: $font-color;
+                -webkit-transition: all 1ms ease;
+                -moz-transition: all 1ms ease;
+                -ms-transition: all 1ms ease;
+                -o-transition: all 1ms ease;
+                transition: all 1ms ease;
+            }
+
+            #active {
+                background-color: $font-color;
+                border-radius: 10px;
+                color: white !important;
+                padding: 0.5rem 1rem;
+                display: block !important;
+            }
+        }
+    }
+
+    #homeText {
+        display: block !important;
+    }
+
+    #profileIcon,
+    #homeIcon,
+    #popup-profile {
+        display: none !important;
+    }
+
+    #navbarNavDropdown,
+    .navbar-toggler {
+        background-color: $third-color;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+// PROFILE POPUP
+
+.profile-popup {
+    .content {
+        position: absolute;
+        top: 35%;
+        left: 88%;
+        transform: translate(-50%, -150%) scale(0);
+        width: 150px;
+        height: 150px;
+        z-index: 2;
+        padding: 1rem 0rem;
+        z-index: 1;
+        border-radius: 10px;
+        background-color: $third-color;
+        box-shadow: 2px 2px 2px 2px #e0e0e0;
+
+        ul {
+            li {
+                list-style-type: none;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding-top: 0.5rem;
+
+                i {
+                    margin-right: 0.5rem;
+                    margin-top: 0.3rem;
+                    color: $font-color;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $font-color;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.profile-popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-30%, -100%) scale(1);
+}
+
+// END OF PROFILE POPUP
+
+// EDIT PROFILE
+
+.edit-profile {
+    padding: 0rem 10rem;
+    .edit-profile-container {
+        display: grid;
+        grid-template-columns: 10fr 30fr;
+
+        .edit-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+            .profile-image {
+                padding-bottom: 2rem;
+                img {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                }
+            }
+
+            .upload-image-btn {
+                padding: 1.5rem 0rem 3rem 0rem; 
+                text-align: center;
+
+                .upload-image {
+                    height: 2.5rem;
+                    background-color: $secondary-color;
+                    border: 2px solid $secondary-color;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 500;
+                  
+
+                    &:hover {
+                        background-color: transparent;
+                        border: 2px solid $secondary-color;
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+
+        .edit-info {
+            padding: 0rem 2rem;
+
+            .edit-info-container{
+                .edit-info-header{
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+
+                .edit-info-title{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+            }
+
+            .edit-container-grid {
+                .form-control {
+                    border: none;
+                    display: grid;
+                    grid-template-columns: 5fr 15fr;
+                    margin: 1rem 0rem;
+
+                    .input-control{
+                        padding: 0.2rem 0.5rem;
+                        margin-left: 0.5rem;
+                        border: 1px solid $third-color;
+                        background-color: $third-color;
+                    }
+                }
+
+            }
+
+            
+            .form-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .btn-form{
+                    margin: 0rem 0.5rem 1.3rem 0.5rem;
+                    border: none;
+                    padding: 0.5rem;
+                    font-weight: 500;
+                    border-radius: 10px;
+
+                    &:hover{
+                        background-color: white !important;
+                        border: 1px solid $secondary-color;
+                        color: $secondary-color !important;
+                    } 
+                }
+
+                #submit{
+                    background-color: $secondary-color;
+                    color: white;
+                }
+
+                #back{
+                    &:hover{
+                        background-color: white !important;
+                        border: 1px solid #EFEFEF;
+                        color: black !important;
+                    }
+                }
+            
+            }
+        }
+    }
+}
+
+@media (max-width: $phone) {
+    .edit-profile {
+        padding: 0rem 1rem;
+        .edit-profile-container {
+            display: flex !important;
+            flex-direction: column;
+
+            .form-control{
+                grid-template-columns: 10fr 5fr !important;
+                .input-control{
+                    width: 10rem;
+                }
+            }
+        }
+    }
+}
