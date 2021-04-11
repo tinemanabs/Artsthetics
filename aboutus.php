@@ -19,7 +19,6 @@
 </head>
 
 <body>
-    <h1>test remote</h1>
     <div class="jumbotron jumbotron-fluid" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('img/bg.jpg'); background-size:cover; height:45vh;">
         <nav class="navbar navbar-expand-lg navbar">
@@ -50,110 +49,12 @@
         <div class="bg-title">ABOUT US</div>
     </div>
 
-    <div class="popup" id="popup-1">
-        <div class="content">
-            <div class="close-btn" onclick="togglePopup()">
-                X</div>
+    <?php 
+    
+    require_once("./web/signin.php");
+    require_once("./web/signup.php");
 
-            <img src="img/logo.png" alt="" srcset="">
-            <div class="title">Welcome to Artsthetics!</div>
-            <div class="caption">Safespace for Art Community</div>
-
-            <form action="" method="post">
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Username">
-                </div>
-                <div class="input-field">
-                    <input type="password" class="validate" placeholder="Password">
-                </div>
-
-
-                <?php
-
-                if (isset($_GET['error'])) {
-                    if ($_GET['error'] == "emptyInput") {
-                        echo '<div class="confirmData" id="confirmData">';
-                        echo 'Fill in all the fields!';
-                        echo '</div>';
-                    }
-
-                    if ($_GET['error'] == "wrongLogin") {
-                        echo '<div class="confirmData" id="confirmData">';
-                        echo 'Try Again!';
-                        echo '</div>';
-                    }
-                }
-
-                ?>
-
-                <button class="second-button">Sign in</button>
-                <p class="signup" onclick="toggleSignUp()">Don't have an account? Sign Up</p>
-            </form>
-        </div>
-    </div>
-
-
-    <div class="sign-up-popup" id="popup-2">
-        <div class="content">
-            <div class="close-btn" onclick="toggleSignUp()">
-                X</div>
-
-            <img src="img/logo.png" alt="" srcset="">
-            <div class="title">Welcome to Artsthetics!</div>
-            <div class="caption">Safespace for Art Community</div>
-
-
-            <form action="" method="post">
-
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Fullname">
-                </div>
-
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Birthday">
-                </div>
-
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Contact Number">
-                </div>
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Email">
-                </div>
-
-                <div class="input-field">
-                    <input type="text" class="validate" placeholder="Username">
-                </div>
-                <div class="input-field">
-                    <input type="password" class="validate" placeholder="Password">
-                </div>
-
-                <div class="input-field">
-                    <input type="password" class="validate" placeholder="Confirm Password">
-                </div>
-
-                <?php
-
-                if (isset($_GET['error'])) {
-                    if ($_GET['error'] == "emptyInput") {
-                        echo '<div class="confirmData" id="confirmData">';
-                        echo 'Fill in all the fields!';
-                        echo '</div>';
-                    }
-
-                    if ($_GET['error'] == "wrongLogin") {
-                        echo '<div class="confirmData" id="confirmData">';
-                        echo 'Try Again!';
-                        echo '</div>';
-                    }
-                }
-
-                ?>
-
-                <button class="second-button" name="signIn">Sign Up</button>
-                <p class="signup" onclick="togglePopup()">Already have an account? Login</p>
-            </form>
-        </div>
-    </div>
+    ?>
 
     <div class="vision-mission-container">
         <div class="grid-container">
