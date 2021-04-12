@@ -12,35 +12,8 @@
 
 <body>
     <?php
-    require_once './web/navbar_user.php';
+    require_once './web/navbar.php';
     ?>
-
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="home.php"><i class="fas fa-home" id="homeIcon"></i></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active " aria-current="page" href="home.php" id="homeText">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="profile-icon" href="#" onclick="profilePopup()"><i class="fas fa-user-circle" id="profileIcon"></i></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link-phone" href="profile.php">Profile</a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link-phone" href="editprofile.php">Edit Profile</a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link-phone" href="">Logout</a>
-    </li>
-
-    </ul>
-    </div>
-    </div>
-    </nav>
 
     <?php
     require_once './web/optionspopup.php';

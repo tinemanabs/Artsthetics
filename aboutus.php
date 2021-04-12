@@ -5,48 +5,20 @@
     <?php
     require_once './web/header.php';
     ?>
-    
-    <link rel="stylesheet" href="css/aboutus.css?v=3">
+
+    <link rel="stylesheet" href="css/aboutus.css?v=2">
     <title>About Us</title>
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('img/bg.jpg'); background-size:cover; height:45vh;">
-        <nav class="navbar navbar-expand-lg navbar">
-            <div class="container">
-                <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="" srcset=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="togglePopup() ">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="toggleSignUp()">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php 
+            require_once "./web/navbar.php";
+        ?>
 
         <div class="bg-title">ABOUT US</div>
     </div>
-
-    <?php
-
-    require_once("./web/signin.php");
-    require_once("./web/signup.php");
-
-    ?>
 
     <div class="vision-mission-container">
         <div class="grid-container">
@@ -106,9 +78,6 @@
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 </html>

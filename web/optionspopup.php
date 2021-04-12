@@ -12,7 +12,7 @@
             <hr>
             <li style="margin-top: -1rem;">
                 <i class="fas fa-sign-out-alt"></i>
-                <a href="#" style=" margin-left: 0.3rem;">Log Out</a>
+                <a href="includes/logout.inc.php" style=" margin-left: 0.3rem;">Log Out</a>
             </li>
         </ul>
     </div>
