@@ -20,57 +20,18 @@
   padding-top: 1rem;
 }
 
-.form-container {
-  display: block;
-  margin: 0 auto;
-}
-
-.input-control {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  margin: 1rem 2rem;
-}
-
-.error-login {
-  color: red;
-  text-align: center;
-}
-
-.input-error {
-  border: red;
-}
-
-.navbar-nav {
-  margin-left: auto;
-}
-
-.navbar-nav .nav-item {
-  padding: 0rem 0.2rem;
-}
-
 .navbar-nav .nav-item .nav-link {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.navbar-nav .nav-item a:hover:not(.active) {
-  border-radius: 10px;
-  border: 3px solid white;
-  color: white;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
-.navbar-nav .nav-item .active {
-  background-color: #986545;
-  border-radius: 10px;
   color: white !important;
 }
 
-.navbar-brand img {
-  height: 100px;
-  width: 130px;
+.navbar-nav .nav-item a:hover:not(.active) {
+  color: #c5847e !important;
+}
+
+#activeAboutUs {
+  background-color: #986545 !important;
+  border-radius: 10px;
+  color: white !important;
 }
 
 @media (max-width: 640px) {
@@ -78,36 +39,7 @@
     margin-left: 1rem;
   }
   .navbar-nav .nav-item .nav-link {
-    color: #986545;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  .navbar-nav .nav-item a:hover:not(.active) {
-    border-radius: 10px;
-    border: 3px solid white;
-    color: #986545;
-    -webkit-transition: all 1ms ease;
-    transition: all 1ms ease;
-  }
-  .navbar-nav .nav-item .active {
-    background-color: #986545;
-    border-radius: 10px;
-    color: white !important;
-    padding-left: 0.5rem;
-  }
-  #navbarNavDropdown,
-  .navbar-toggler {
-    background-color: white;
-  }
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  }
-  .jumbotron-fluid {
-    height: 45vh !important;
-  }
-  .bg-title {
-    font-size: 3.5rem;
-    padding-top: 1rem;
+    color: #986545 !important;
   }
 }
 
@@ -325,213 +257,5 @@
   .profiles {
     margin: 1.25rem 0;
   }
-}
-
-.popup .content {
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -150%) scale(0);
-          transform: translate(-50%, -150%) scale(0);
-  width: 25rem;
-  height: 30rem;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-  border-radius: 20px;
-  z-index: 1;
-  border-radius: 50px;
-  background-color: white;
-  padding: 1rem;
-  -webkit-box-shadow: 5px 5px 5px 5px #e0e0e0;
-          box-shadow: 5px 5px 5px 5px #e0e0e0;
-}
-
-.popup .content .close-btn {
-  position: absolute;
-  right: 30px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  color: black;
-  font-size: 30px;
-  border-radius: 50%;
-  padding: 2px 5px 7px 5px;
-  font-weight: 500;
-}
-
-.popup .content .close-btn:hover {
-  background-color: #F5F1E5;
-  height: 50px;
-  width: 50px;
-}
-
-.popup .content img {
-  height: 100px;
-  width: 130px;
-}
-
-.popup .content .title {
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-
-.popup .content .caption {
-  font-weight: 300;
-  padding-bottom: 1rem;
-}
-
-.popup .content .input-field {
-  padding: 0.5rem;
-}
-
-.popup .content .input-field .validate {
-  padding: 0rem 0.5rem;
-  border-radius: 10px;
-  border: 2px solid #707070;
-  height: 3rem;
-  font-size: 1.3;
-}
-
-.popup .content .input-field .validate:hover {
-  border: 3px solid #986545;
-}
-
-.popup .content .second-button {
-  background-color: #986545;
-  color: white;
-  height: 2.5rem;
-  width: 6rem;
-  border-radius: 10px;
-  margin: 1rem 0rem;
-  border: 2px solid #986545;
-}
-
-.popup .content .second-button:hover {
-  background-color: white;
-  color: #986545;
-}
-
-.popup .content .signup {
-  color: #707070;
-  font-weight: 700;
-}
-
-.popup .content .confirmData {
-  padding: 0.5rem 0rem;
-  font-size: 1rem;
-  color: #f06464;
-  font-weight: 700;
-}
-
-.popup.active .content {
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  -webkit-transform: translate(-50%, -120%) scale(1);
-          transform: translate(-50%, -120%) scale(1);
-}
-
-.sign-up-popup .content {
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -150%) scale(0);
-          transform: translate(-50%, -150%) scale(0);
-  width: 25rem;
-  height: 43rem;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-  border-radius: 20px;
-  z-index: 1;
-  border-radius: 50px;
-  background-color: white;
-  padding: 1rem;
-  -webkit-box-shadow: 5px 5px 5px 5px #e0e0e0;
-          box-shadow: 5px 5px 5px 5px #e0e0e0;
-}
-
-.sign-up-popup .content .close-btn {
-  position: absolute;
-  right: 30px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  color: black;
-  font-size: 30px;
-  border-radius: 50%;
-  padding: 2px 5px 7px 5px;
-  font-weight: 500;
-}
-
-.sign-up-popup .content .close-btn:hover {
-  background-color: #F5F1E5;
-  height: 50px;
-  width: 50px;
-}
-
-.sign-up-popup .content img {
-  height: 100px;
-  width: 130px;
-}
-
-.sign-up-popup .content .title {
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-
-.sign-up-popup .content .caption {
-  font-weight: 300;
-  padding-bottom: 1rem;
-}
-
-.sign-up-popup .content .input-field {
-  padding: 0.5rem;
-}
-
-.sign-up-popup .content .input-field .validate {
-  padding: 0rem 0.5rem;
-  border-radius: 10px;
-  border: 2px solid #707070;
-  height: 2rem;
-  font-size: 1.3;
-}
-
-.sign-up-popup .content .input-field .validate:hover {
-  border: 3px solid #986545;
-}
-
-.sign-up-popup .content .second-button {
-  background-color: #986545;
-  color: white;
-  height: 2rem;
-  width: 5rem;
-  border-radius: 10px;
-  margin: 1rem 0rem;
-  border: 2px solid #986545;
-}
-
-.sign-up-popup .content .second-button:hover {
-  background-color: white;
-  color: #986545;
-}
-
-.sign-up-popup .content .signup {
-  color: #707070;
-  font-weight: 700;
-}
-
-.sign-up-popup .content .confirmData {
-  padding: 0.5rem 0rem;
-  font-size: 1rem;
-  color: #f06464;
-  font-weight: 700;
-}
-
-.sign-up-popup.active .content {
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  -webkit-transform: translate(-50%, -97%) scale(1);
-          transform: translate(-50%, -97%) scale(1);
 }
 /*# sourceMappingURL=aboutus.css.map */

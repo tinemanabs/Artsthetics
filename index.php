@@ -6,7 +6,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/index.css?=v4">
+    <link rel="stylesheet" href="css/index.css?=v8">
     <title>Artsthetics</title>
 </head>
 

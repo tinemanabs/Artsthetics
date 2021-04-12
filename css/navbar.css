@@ -1,23 +1,10 @@
-.form-container {
-  display: block;
-  margin: 0 auto;
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
-.input-control {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  margin: 1rem 2rem;
-}
-
-.error-login {
-  color: red;
-  text-align: center;
-}
-
-.input-error {
-  border: red;
-}
-
+/*===============================
+============ NAV BAR ============
+================================*/
 .navbar-nav {
   margin-left: auto;
 }
@@ -34,24 +21,15 @@
 
 .navbar-nav .nav-item a:hover:not(.active) {
   border-radius: 10px;
-  border: 3px solid #986545;
-  color: #986545;
+  color: #c5847e;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
-}
-
-.navbar-nav .nav-item .active {
-  background-color: #986545;
-  border-radius: 10px;
-  color: white !important;
 }
 
 .navbar-brand img {
   height: 100px;
   width: 130px;
 }
-
-
 
 @media (max-width: 640px) {
   .navbar-nav {
@@ -64,23 +42,98 @@
   }
   .navbar-nav .nav-item a:hover:not(.active) {
     border-radius: 10px;
-    border: 3px solid #F5F1E5;
+    border: 3px solid #f5f1e5;
     color: #986545;
     -webkit-transition: all 1ms ease;
     transition: all 1ms ease;
   }
-  .navbar-nav .nav-item .active {
-    background-color: #986545;
-    border-radius: 10px;
-    color: white !important;
-    padding-left: 0.5rem;
-  }
   #navbarNavDropdown,
   .navbar-toggler {
-    background-color: #F5F1E5;
+    background-color: #f5f1e5;
   }
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
+}
+
+/*===============================
+============ MODALS =============
+================================*/
+.modal-content {
+  border: none;
+  border-radius: 30px;
+}
+
+.form-container {
+  display: block;
+  margin: 0 auto;
+  margin-top: -1.5rem;
+}
+
+.input-control {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  margin: 1rem 2rem;
+}
+
+.input-control label {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.input-control .input-form {
+  border: none;
+  background-color: #f5f1e5;
+  padding: 0.2rem 0.5rem;
+  margin-left: 1rem;
+}
+
+.error-login {
+  padding-bottom: 0.5rem;
+  color: #E25055;
+  text-align: center;
+  font-weight: 700;
+}
+
+.error-login i {
+  padding: 0.5rem;
+}
+
+.input-error {
+  border: #E25055;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  border: none;
+}
+
+.modal-header img {
+  width: 120px;
+  height: 80px;
+}
+
+.modal-header .modal-title-header {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.modal-header .modal-caption {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.modal-footer .btn-primary {
+  background-color: #c5847e;
+  border: 1px solid #c5847e;
 }
 /*# sourceMappingURL=navbar.css.map */

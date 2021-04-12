@@ -6,7 +6,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/navbar.css?v=2">
+    <link rel="stylesheet" href="css/navbar.css?v=5">
 </head>
 
 <body>
@@ -22,10 +22,10 @@
         echo '        <div class="collapse navbar-collapse" id="navbarNavDropdown">';
         echo '          <ul class="navbar-nav">';
         echo '              <li class="nav-item">';
-        echo '                  <a class="nav-link active" aria-current="page" href="index.php">Home</a>';
+        echo '                  <a class="nav-link" href="index.php" id="activeHome">Home</a>';
         echo '              </li>';
         echo '              <li class="nav-item">';
-        echo '                  <a class="nav-link" href="aboutus.php">About Us</a>';
+        echo '                  <a class="nav-link" href="aboutus.php" id="activeAboutUs">About Us</a>';
         echo '              </li>';
         echo '              <li class="nav-item">';
         echo '                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login">';
@@ -82,7 +82,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    Login
+                    <div class="modal-img-logo"><img src="img/logo.png" alt="" srcset=""></div>
+                    <div class="modal-title-header">Welcome to Artsthetics! </div>
+                    <div class="modal-caption">Safespace for the Art Community</div>
                 </div>
                 <form action="" method="POST">
                     <div class="form-container">
@@ -103,10 +105,12 @@
                             $pass = $_POST['pass'];
                             if (loginEmpty($uname, $pass)) {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Fill in all the fields!';
                                 echo '</div>';
                             } else if (wrongCredentials($uname)) {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Wrong Credentials!';
                                 echo '</div>';
                                 echo '<script>$("#uname").addClass(".input-error")</script>';
@@ -132,7 +136,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    Login
+                    <div class="modal-img-logo"><img src="img/logo.png" alt="" srcset=""></div>
+                    <div class="modal-title-header">Welcome to Artsthetics! </div>
+                    <div class="modal-caption">Safespace for the Art Community</div>
                 </div>
                 <form action="" method="POST">
                     <div class="form-container">
@@ -180,21 +186,25 @@
 
                             if ($fname == "" || $bday == "" || $contact == "" || $email == "" || $uname == "" || $pass == "" || $cpass == "") {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Field(s) are empty!';
                                 echo '</div>';
                                 echo '<script>alert("Input error in register")</script>';
                             } else if (emailExist($email)) {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Email already exists!';
                                 echo '</div>';
                                 echo '<script>alert("Email already used!")</script>';
                             } else if (usernameExist($uname)) {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Username taken!';
                                 echo '</div>';
                                 echo '<script>alert("Username already taken!")</script>';
                             } else if (passMismatch($pass, $cpass)) {
                                 echo '<div class="error-login">';
+                                echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Password mismatch!';
                                 echo '</div>';
                                 echo '<script>alert("Password mismatch!")</script>';

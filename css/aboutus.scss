@@ -1,8 +1,8 @@
 $phone: 640px;
 $desktop: 993px;
-$font-color: #986545 ;
-$secondary-color:#c5847e ;
-$third-color: #F5F1E5;
+$font-color: #986545;
+$secondary-color: #c5847e;
+$third-color: #f5f1e5;
 
 * {
     padding: 0;
@@ -20,40 +20,21 @@ $third-color: #F5F1E5;
 }
 
 .navbar-nav {
-    margin-left: auto;
-
     .nav-item {
-        padding: 0rem 0.2rem;
         .nav-link {
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
+            color: white !important;
         }
 
         a:hover:not(.active) {
-            border-radius: 10px;
-            border: 3px solid white;
-            color: white;
-            -webkit-transition: all 500ms ease;
-            -moz-transition: all 500ms ease;
-            -ms-transition: all 500ms ease;
-            -o-transition: all 500ms ease;
-            transition: all 500ms ease;
-        }
-
-        .active {
-            background-color: $font-color;
-            border-radius: 10px;
-            color: white!important;
+            color: $secondary-color !important;
         }
     }
 }
 
-.navbar-brand {
-    img {
-        height: 100px;
-        width: 130px;
-    }
+#activeAboutUs {
+    background-color: $font-color !important;
+    border-radius: 10px;
+    color: white !important;
 }
 
 @media (max-width: $phone) {
@@ -62,45 +43,9 @@ $third-color: #F5F1E5;
 
         .nav-item {
             .nav-link {
-                color: $font-color;
-                font-weight: bold;
-                font-size: 1.2rem;
-            }
-            a:hover:not(.active) {
-                border-radius: 10px;
-                border: 3px solid white;
-                color: $font-color;
-                -webkit-transition: all 1ms ease;
-                -moz-transition: all 1ms ease;
-                -ms-transition: all 1ms ease;
-                -o-transition: all 1ms ease;
-                transition: all 1ms ease;
-            }
-
-            .active {
-                background-color: $font-color;
-                border-radius: 10px;
-                color: white !important;
-                padding-left: 0.5rem;
+                color: $font-color !important;
             }
         }
-    }
-
-    #navbarNavDropdown,
-    .navbar-toggler {
-        background-color: white;
-    }
-
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    }
-
-    .jumbotron-fluid {
-        height: 45vh !important;
-    }
-    .bg-title {
-        font-size: 3.5rem;
-        padding-top: 1rem;
     }
 }
 
@@ -266,7 +211,6 @@ $third-color: #F5F1E5;
                 text-align: justify;
             }
         }
-
     }
 }
 
@@ -290,216 +234,5 @@ $third-color: #F5F1E5;
 @media only screen and (max-width: 993px) {
     .profiles {
         margin: 1.25rem 0;
-
     }
-}
-
-.popup {
-    .content {
-        position: absolute;
-        top: 95%;
-        left: 50%;
-        transform: translate(-50%, -150%) scale(0);
-        width: 25rem;
-        height: 30rem;
-        z-index: 2;
-        text-align: center;
-        padding: 20px;
-        border-radius: 20px;
-        z-index: 1;
-        border-radius: 50px;
-        background-color: white;
-        padding: 1rem;
-        box-shadow: 5px 5px 5px 5px #e0e0e0;
-
-        .close-btn {
-            position: absolute;
-            right: 30px;
-            top: 20px;
-            width: 30px;
-            height: 30px;
-            color: black;
-            font-size: 30px;
-            border-radius: 50%;
-            padding: 2px 5px 7px 5px;
-            font-weight: 500;
-
-            &:hover{
-                background-color: $third-color;
-                height: 50px;
-                width: 50px;
-            }
-        }
-
-        img{
-            height: 100px;
-            width: 130px;
-        }
-
-        .title{
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-
-        .caption{
-            font-weight: 300;
-            padding-bottom: 1rem;
-        }
-
-        .input-field{
-            padding: 0.5rem;
-
-            .validate{
-                padding: 0rem 0.5rem;
-                border-radius: 10px;
-                border: 2px solid #707070;
-                height: 3rem;
-                font-size: 1.3;
-
-                &:hover{
-                    border: 3px solid $font-color;
-                }
-            }
-        }
-
-        .second-button{
-            background-color: $font-color;
-            color: white;
-            height: 2.5rem;
-            width: 6rem;
-            border-radius: 10px;
-            margin: 1rem 0rem;
-            border: 2px solid $font-color;
-
-            &:hover{
-                background-color: white;
-                color: $font-color;
-            }
-        }
-
-        .signup{
-            color: #707070;
-            font-weight: 700;
-        }
-
-        .confirmData{
-            padding: 0.5rem 0rem;
-            font-size: 1rem;
-            color: rgb(240, 100, 100);
-            font-weight: 700;
-        }
-    }
-
-
-}
-
-
-.popup.active .content {
-    transition: all 300ms ease-in-out;
-    transform: translate(-50%, -120%) scale(1);
-}
-
-.sign-up-popup {
-    .content {
-        position: absolute;
-        top: 95%;
-        left: 50%;
-        transform: translate(-50%, -150%) scale(0);
-        width: 25rem;
-        height: 43rem;
-        z-index: 2;
-        text-align: center;
-        padding: 20px;
-        border-radius: 20px;
-        z-index: 1;
-        border-radius: 50px;
-        background-color: white;
-        padding: 1rem;
-        box-shadow: 5px 5px 5px 5px #e0e0e0;
-
-        .close-btn {
-            position: absolute;
-            right: 30px;
-            top: 20px;
-            width: 30px;
-            height: 30px;
-            color: black;
-            font-size: 30px;
-            border-radius: 50%;
-            padding: 2px 5px 7px 5px;
-            font-weight: 500;
-
-            &:hover{
-                background-color: $third-color;
-                height: 50px;
-                width: 50px;
-            }
-        }
-
-        img{
-            height: 100px;
-            width: 130px;
-        }
-
-        .title{
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-
-        .caption{
-            font-weight: 300;
-            padding-bottom: 1rem;
-        }
-
-        .input-field{
-            padding: 0.5rem;
-
-            .validate{
-                padding: 0rem 0.5rem;
-                border-radius: 10px;
-                border: 2px solid #707070;
-                height: 2rem;
-                font-size: 1.3;
-
-                &:hover{
-                    border: 3px solid $font-color;
-                }
-            }
-        }
-
-        .second-button{
-            background-color: $font-color;
-            color: white;
-            height: 2rem;
-            width: 5rem;
-            border-radius: 10px;
-            margin: 1rem 0rem;
-            border: 2px solid $font-color;
-
-            &:hover{
-                background-color: white;
-                color: $font-color;
-            }
-        }
-
-        .signup{
-            color: #707070;
-            font-weight: 700;
-        }
-
-        .confirmData{
-            padding: 0.5rem 0rem;
-            font-size: 1rem;
-            color: rgb(240, 100, 100);
-            font-weight: 700;
-        }
-    }
-
-
-}
-
-
-.sign-up-popup.active .content {
-    transition: all 300ms ease-in-out;
-    transform: translate(-50%, -97%) scale(1);
 }

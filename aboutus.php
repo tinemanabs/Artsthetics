@@ -6,7 +6,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/aboutus.css?v=2">
+    <link rel="stylesheet" href="css/aboutus.css?v=3">
     <title>About Us</title>
 </head>
 
@@ -26,7 +26,9 @@
                 <div class="mission-statement">
                     <div class="mission-header">Our Mission</div>
                     <hr>
-                    <div class="mission-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quisquam excepturi, fugit magnam ut corporis quis recusandae dolorem enim natus consectetur optio, architecto fugiat dolor, incidunt sunt soluta laborum! Sed?</div>
+                    <div class="mission-details">Build a better community by showcasing each 
+                        individual's creativity and artistry in all forms of medium and serve a platform that 
+                    engages artist into their passion, making the art community be appreciated in the society.</div>
 
                 </div>
                 <div class="mission-image">
@@ -39,7 +41,9 @@
                 <div class="vision-statement">
                     <div class="vision-header">Our Vision</div>
                     <hr>
-                    <div class="vision-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quisquam excepturi, fugit magnam ut corporis quis recusandae dolorem enim natus consectetur optio, architecto fugiat dolor, incidunt sunt soluta laborum! Sed?</div>
+                    <div class="vision-details">Be the voice and the representation of art enthusiasts and artists
+                        by allowing them to exhibit their creative works and masterpiece. Give artists the opportunity to influence
+                    aspiring artists and even the society. </div>
                 </div>
             </div>
 

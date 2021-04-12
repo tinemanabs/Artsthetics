@@ -1,37 +1,36 @@
-
 $phone: 640px;
-$font-color: #986545 ;
-$secondary-color:#c5847e ;
-$third-color: #F5F1E5;
+$font-color: #986545;
+$secondary-color: #c5847e;
+$third-color: #f5f1e5;
+$font-face: "Montserrat", sans-serif;
+
+body {
+    font-family: $font-face;
+}
+
+/*===============================
+============ NAV BAR ============
+================================*/
 
 .navbar-nav {
     margin-left: auto;
-    
+
     .nav-item {
         padding: 0rem 0.2rem;
         .nav-link {
             color: $font-color;
             font-weight: bold;
             font-size: 1.2rem;
-
         }
 
         a:hover:not(.active) {
             border-radius: 10px;
-            border: 3px solid $font-color;
-            color: $font-color;
+            color: $secondary-color;
             -webkit-transition: all 500ms ease;
             -moz-transition: all 500ms ease;
             -ms-transition: all 500ms ease;
             -o-transition: all 500ms ease;
             transition: all 500ms ease;
-        }
-
-        
-        .active {
-            background-color: $font-color;
-            border-radius: 10px;
-            color: white !important;
         }
     }
 }
@@ -44,17 +43,14 @@ $third-color: #F5F1E5;
 }
 
 @media (max-width: $phone) {
-    
     .navbar-nav {
         margin-left: 1rem;
 
         .nav-item {
-
             .nav-link {
                 color: $font-color;
                 font-weight: bold;
                 font-size: 1.2rem;
-    
             }
             a:hover:not(.active) {
                 border-radius: 10px;
@@ -65,13 +61,6 @@ $third-color: #F5F1E5;
                 -ms-transition: all 1ms ease;
                 -o-transition: all 1ms ease;
                 transition: all 1ms ease;
-            }
-
-            .active {
-                background-color: $font-color;
-                border-radius: 10px;
-                color: white !important;
-                padding-left: 0.5rem;
             }
         }
     }
@@ -84,5 +73,78 @@ $third-color: #F5F1E5;
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(197, 132, 126)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
-    
+}
+
+/*===============================
+============ MODALS =============
+================================*/
+.modal-content{
+    border: none;
+    border-radius: 30px;
+}
+.form-container {
+    display: block;
+    margin: 0 auto;
+    margin-top: -1.5rem;
+}
+
+.input-control {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 1rem 2rem;
+
+    label{
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .input-form{
+        border: none;
+        background-color: $third-color;
+        padding: 0.2rem 0.5rem;
+        margin-left: 1rem;
+    }
+}
+
+.error-login {
+    padding-bottom: 0.5rem;
+    color: #E25055;
+    text-align: center;
+    font-weight: 700;
+
+    i{
+        padding: 0.5rem;
+    }
+}
+
+.input-error {
+    border: #E25055;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: none;
+    img{
+        width: 120px;
+        height: 80px;
+    }
+
+    .modal-title-header{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .modal-caption{
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+}
+
+.modal-footer{
+    .btn-primary{
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+    }
 }
