@@ -111,13 +111,14 @@ function loginUser($uname, $pass)
     if ($checkPass === false) {
         echo '<script>alert("Wrong Credentials!")</script>';
     } else if ($checkPass === true) {
+        header("location: ../home.php");
         session_start();
+        $_SESSION["id"] = $user["user_id"];
         $_SESSION["fullname"] = $user["user_fullname"];
         $_SESSION["bday"] = $user["user_bday"];
         $_SESSION["contact"] = $user["user_contact"];
         $_SESSION["email"] = $user["user_email"];
         $_SESSION["uname"] = $user["user_username"];
         $_SESSION["pass"] = $user["user_pass"];
-        header("location: home.php");
     }
 }

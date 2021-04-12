@@ -28,12 +28,12 @@
         echo '                  <a class="nav-link" href="aboutus.php" id="activeAboutUs">About Us</a>';
         echo '              </li>';
         echo '              <li class="nav-item">';
-        echo '                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login">';
+        echo '                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#login">';
         echo '                      Login';
         echo '                  </a>';
         echo '              </li>';
         echo '              <li class="nav-item">';
-        echo '                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#register">';
+        echo '                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#register">';
         echo '                      Sign Up';
         echo '                  </a>';
         echo '              </li>';
@@ -115,8 +115,9 @@
                                 echo '</div>';
                                 echo '<script>$("#uname").addClass(".input-error")</script>';
                             } else {
-                                echo '<script>alert("Successfully logged in!")</script>';
+                                header("location: ../home.php");
                                 loginUser($uname, $pass);
+                                header("location: ../home.php");
                             }
                         }
 
@@ -189,28 +190,29 @@
                                 echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Field(s) are empty!';
                                 echo '</div>';
-                                echo '<script>alert("Input error in register")</script>';
                             } else if (emailExist($email)) {
                                 echo '<div class="error-login">';
                                 echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Email already exists!';
                                 echo '</div>';
-                                echo '<script>alert("Email already used!")</script>';
                             } else if (usernameExist($uname)) {
                                 echo '<div class="error-login">';
                                 echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Username taken!';
                                 echo '</div>';
-                                echo '<script>alert("Username already taken!")</script>';
                             } else if (passMismatch($pass, $cpass)) {
                                 echo '<div class="error-login">';
                                 echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Password mismatch!';
-                                echo '</div>';
-                                echo '<script>alert("Password mismatch!")</script>';
                             } else {
-                                addUser($fname, $bday, $contact, $emailZz, $uname, $pass);
-                                echo '<script>alert("User successfully created!")</script>';
+                                addUser($fname, $bday, $contact, $email, $uname, $pass);
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'User Created!',";
+                                echo "    'You can log in to your new account!',";
+                                echo "    'success'";
+                                echo ")";
+                                echo "</script>";
                                 header("location: index.php");
                             }
                         }
@@ -224,9 +226,5 @@
             </div>
         </div>
     </div>
-
-
-
-</body>
 
 </html>

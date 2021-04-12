@@ -17,6 +17,7 @@ body {
   color: #986545;
   font-weight: bold;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .navbar-nav .nav-item a:hover:not(.active) {

@@ -36,7 +36,7 @@
         echo '    <div class="card-header">404 Page not found</div>';
         echo '    <div class="card-body">404 Page not found</div>';
         echo '</div>';
-        echo '</div';
+        echo '</div>';
     }
     ?>
 </body>
