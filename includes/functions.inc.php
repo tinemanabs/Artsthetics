@@ -72,7 +72,6 @@ function addUser($fname, $bday, $contact, $email, $uname, $pass, $vcode)
     $stmt->bind_param("sssssss", $fname, $bday, $contact, $email, $uname, $pass, $vcode);
     $stmt->execute();
     $stmt->close();
-
 }
 
 
@@ -112,7 +111,13 @@ function loginUser($uname, $pass)
     }
 
     if ($checkPass === false) {
-        echo '<script>alert("Wrong Credentials!")</script>';
+        echo "<script>";
+        echo "Swal.fire(";
+        echo "    'Try Again!',";
+        echo "    'Wrong username/password!',";
+        echo "    'warning'";
+        echo ")";
+        echo "</script>";
     } else if ($checkPass === true) {
         if ($user["v_status"] == 1) {
             header("location: ./home.php");
@@ -129,10 +134,9 @@ function loginUser($uname, $pass)
             echo "Swal.fire({";
             echo "    icon: 'error',";
             echo "    title: 'Oops...',";
-            echo "    text: 'Your account is not yet verified! Please check your email.'";  
+            echo "    text: 'Your account is not yet verified! Please check your email.'";
             echo "})";
             echo "</script>";
-            header('Location: ./index.php');
         }
     }
 }

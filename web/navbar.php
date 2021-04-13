@@ -67,7 +67,7 @@
         // Desktop View
         echo '                <li class="nav-item">';
         echo '                    <a class="nav-link" href="home.php"><i class="fas fa-home" id="homeIcon"></i></a>';
-        echo '                </li>';                         
+        echo '                </li>';
         echo '                <li class="nav-item dropdown">';
         echo '                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
         echo '                        <i class="fas fa-user-circle" id="profileIcon"></i>';
@@ -117,19 +117,23 @@
                             $uname = $_POST['uname'];
                             $pass = $_POST['pass'];
                             if (loginEmpty($uname, $pass)) {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Fill in all the fields!';
-                                echo '</div>';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Fields are empty!',";
+                                echo "    'Password fields are not the same!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else if (wrongCredentials($uname)) {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Wrong Credentials!';
-                                echo '</div>';
-                                echo '<script>$("#uname").addClass(".input-error")</script>';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Wrong Credentials!',";
+                                echo "    'This user does not exist!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else {
                                 loginUser($uname, $pass);
-                                header("location: ./home.php");
                             }
                         }
                         ?>
@@ -199,24 +203,37 @@
                             $vcode = uniqid();
 
                             if ($fname == "" || $bday == "" || $contact == "" || $email == "" || $uname == "" || $pass == "" || $cpass == "") {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Field(s) are empty!';
-                                echo '</div>';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Empty Fields!',";
+                                echo "    'Some fields are empty!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else if (emailExist($email)) {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Email already exists!';
-                                echo '</div>';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Email Exist!',";
+                                echo "    'This email is already used by another person!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else if (usernameExist($uname)) {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Username taken!';
-                                echo '</div>';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Username Exist!',";
+                                echo "    'This username is already used by another person!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else if (passMismatch($pass, $cpass)) {
-                                echo '<div class="error-login">';
-                                echo '<i class="fas fa-exclamation-triangle"></i>';
-                                echo 'Password mismatch!';
+                                echo "<script>";
+                                echo "Swal.fire(";
+                                echo "    'Password Mismatch!',";
+                                echo "    'Password fields are not the same!',";
+                                echo "    'warning'";
+                                echo ")";
+                                echo "</script>";
                             } else {
                                 $mail->SetFrom($gmailUsername, "Account Verification"); //Name of Sender: the "FEU-IT Admin" could be change and replace as the name of the sender
                                 $mail->Subject = "Please verify your account!"; //Email Subject: to get the subject from the form
@@ -231,7 +248,6 @@
                                 if (!$mail->Send()) {
                                     echo "Mailer Error: " . $mail->ErrorInfo;
                                 } else {
-                                    addUser($fname, $bday, $contact, $email, $uname, $pass, $vcode);
                                     echo "<script>";
                                     echo "Swal.fire(";
                                     echo "    'User Created!',";
@@ -239,7 +255,7 @@
                                     echo "    'success'";
                                     echo ")";
                                     echo "</script>";
-                                    header("location: index.php");
+                                    addUser($fname, $bday, $contact, $email, $uname, $pass, $vcode);
                                 }
                             }
                         }

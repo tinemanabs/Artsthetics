@@ -88,7 +88,7 @@
                                 ?>
 
                                 <button class="profile-edit-btn" name="uploadsub" type="submit">Upload Photo </button>
-                              
+
 
                             </form>
                         </div>
@@ -122,7 +122,8 @@
                         echo '    <img src=' . $row["post_img"] . ' class="gallery-image" alt="">';
                         echo '<div class="gallery-item-info">';
                         echo '<ul>';
-                        echo '<li> <button class="btn btn-danger">Delete</button></li>';
+                        echo '<li> <button name=editpost class="btn btn-primary">Edit</button></li> &nbsp&nbsp&nbsp&nbsp';
+                        echo '<li> <button id="delBtn" data-itemid='.$row["post_id"].' class="btn btn-danger delBtn">Delete</button></li>';
                         echo '</ul>';
                         echo '</div>';
                         echo '</div>';
@@ -162,6 +163,22 @@
         </div>
 
     <?php endif; ?>
+
+    <script>
+    $(".delBtn").click(function(){
+        var id = $(this).data('itemid')
+        Swal.fire({
+            title: 'Delete item?',
+            text: 'Are you sure you want to delete the post?',
+            icon: 'warning',
+            showCancelButton: true,
+        }).then((result)=> {
+            if(result.isConfirmed) {
+                location.href="./includes/deletepost.inc.php?post="+id
+            }
+        })
+    })
+    </script>
 </body>
 
 </html>

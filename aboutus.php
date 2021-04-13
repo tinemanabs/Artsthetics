@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<?php if (!isset($_SESSION["uname"])) : ?>
     <div class="bg-title">About Us</div>
     <div class="vision-mission-container">
         <div class="grid-container">
@@ -69,6 +70,14 @@
             </div>
         </div>
     </div>
+    <?php else : ?>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">404 Page not found</div>
+            </div>
+        </div>
+
+    <?php endif; ?>
 </body>
 
 </html>

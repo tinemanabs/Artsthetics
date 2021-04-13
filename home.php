@@ -88,6 +88,25 @@
             <div class="gallery-item">
                 <img src="img/gallery/image18.jpg">
             </div>
+            
+            <?php 
+            $conn = new mysqli("localhost", "root", "", "Artsthetics");
+            $sql = "SELECT * FROM user_post";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()){
+                    $_GET["post"] = 28;
+                    echo '<div class="gallery-item">';
+                    echo '    <img data-itemid='. $row["post_id"].' src=' .$row["post_img"]. '>';
+                    echo '</div>';
+                }
+            }
+            ?>
         </div>
         
     <?php else : ?>
