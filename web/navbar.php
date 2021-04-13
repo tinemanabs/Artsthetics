@@ -112,12 +112,10 @@
                                 echo '</div>';
                                 echo '<script>$("#uname").addClass(".input-error")</script>';
                             } else {
-                                header("location: ../home.php");
                                 loginUser($uname, $pass);
-                                header("location: ../home.php");
+                                header("location: ./home.php");
                             }
                         }
-
                         ?>
                         <div class="modal-footer">
                             <button type="submit" name="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -172,6 +170,7 @@
                         </div>
                         <?php
                         require_once("./includes/functions.inc.php");
+                        require_once 'sendmail.php';
 
                         if (isset($_POST['regsub'])) {
                             $fname = $_POST["fname"];
@@ -181,6 +180,7 @@
                             $email = $_POST["email"];
                             $pass = $_POST["pass"];
                             $cpass = $_POST["cpass"];
+                            $vcode = uniqid();
 
                             if ($fname == "" || $bday == "" || $contact == "" || $email == "" || $uname == "" || $pass == "" || $cpass == "") {
                                 echo '<div class="error-login">';
@@ -202,15 +202,29 @@
                                 echo '<i class="fas fa-exclamation-triangle"></i>';
                                 echo 'Password mismatch!';
                             } else {
-                                addUser($fname, $bday, $contact, $email, $uname, $pass);
-                                echo "<script>";
-                                echo "Swal.fire(";
-                                echo "    'User Created!',";
-                                echo "    'You can log in to your new account!',";
-                                echo "    'success'";
-                                echo ")";
-                                echo "</script>";
-                                header("location: index.php");
+                                $mail->SetFrom($gmailUsername, "Account Verification"); //Name of Sender: the "FEU-IT Admin" could be change and replace as the name of the sender
+                                $mail->Subject = "Please verify your account!"; //Email Subject: to get the subject from the form
+                                $mail->Body = "<h1>Welcome to my App!</h1>
+                        <h3>Please click the link below to activate your account:<br/>
+                            <a href='http://localhost/FinalProj/activateuser.php?vcode=$vcode'>ACTIVATE ACCOUNT</a> 
+                        </h3>";
+                                //Content of Message : to get the content or body of the email from form
+
+                                $mail->AddAddress($email); //Recepient of email: to send whatever email you want to
+
+                                if (!$mail->Send()) {
+                                    echo "Mailer Error: " . $mail->ErrorInfo;
+                                } else {
+                                    addUser($fname, $bday, $contact, $email, $uname, $pass, $vcode);
+                                    echo "<script>";
+                                    echo "Swal.fire(";
+                                    echo "    'User Created!',";
+                                    echo "    'You can log in to your new account!',";
+                                    echo "    'success'";
+                                    echo ")";
+                                    echo "</script>";
+                                    header("location: index.php");
+                                }
                             }
                         }
                         ?>

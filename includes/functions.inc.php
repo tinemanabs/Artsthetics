@@ -1,6 +1,7 @@
 <?php
 
-function emptyFields($fname, $bday, $contact, $email, $uname, $pass, $cpass){
+function emptyFields($fname, $bday, $contact, $email, $uname, $pass, $cpass)
+{
     if ($fname == "" || $bday == "" || $contact == "" || $email == "" || $uname == "" || $pass == "" || $cpass) {
         return true;
     } else {
@@ -63,14 +64,15 @@ function invalidEmail($email)
     return $result;
 }
 
-function addUser($fname, $bday, $contact, $email, $uname, $pass)
+function addUser($fname, $bday, $contact, $email, $uname, $pass, $vcode)
 {
     $conn = new mysqli("localhost", "root", "", "Artsthetics");
-    $sql = "INSERT INTO user_account (user_fullname, user_bday, user_contact, user_email, user_username, user_pass) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO user_account (user_fullname, user_bday, user_contact, user_email, user_username, user_pass, v_code) VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssss", $fname, $bday, $contact, $email, $uname, $pass);
+    $stmt->bind_param("sssssss", $fname, $bday, $contact, $email, $uname, $pass, $vcode);
     $stmt->execute();
     $stmt->close();
+
 }
 
 
@@ -78,7 +80,8 @@ function addUser($fname, $bday, $contact, $email, $uname, $pass)
 ///////////////LOGIN///////////////
 ###################################
 
-function loginEmpty($uname, $pass) {
+function loginEmpty($uname, $pass)
+{
     if ($uname == "" || $pass == "") {
         return true;
     } else {
@@ -86,14 +89,14 @@ function loginEmpty($uname, $pass) {
     }
 }
 
-function wrongCredentials($uname) {
+function wrongCredentials($uname)
+{
     $user = usernameExist($uname);
     if ($user === false) {
         return true;
     } else {
         return false;
     }
-
 }
 
 function loginUser($uname, $pass)
@@ -111,14 +114,25 @@ function loginUser($uname, $pass)
     if ($checkPass === false) {
         echo '<script>alert("Wrong Credentials!")</script>';
     } else if ($checkPass === true) {
-        header("location: ./home.php");
-        session_start();
-        $_SESSION["id"] = $user["user_id"];
-        $_SESSION["fullname"] = $user["user_fullname"];
-        $_SESSION["bday"] = $user["user_bday"];
-        $_SESSION["contact"] = $user["user_contact"];
-        $_SESSION["email"] = $user["user_email"];
-        $_SESSION["uname"] = $user["user_username"];
-        $_SESSION["pass"] = $user["user_pass"];
+        if ($user["v_status"] == 1) {
+            header("location: ./home.php");
+            session_start();
+            $_SESSION["id"] = $user["user_id"];
+            $_SESSION["fullname"] = $user["user_fullname"];
+            $_SESSION["bday"] = $user["user_bday"];
+            $_SESSION["contact"] = $user["user_contact"];
+            $_SESSION["email"] = $user["user_email"];
+            $_SESSION["uname"] = $user["user_username"];
+            $_SESSION["pass"] = $user["user_pass"];
+        } else {
+            echo "<script>";
+            echo "Swal.fire({";
+            echo "    icon: 'error',";
+            echo "    title: 'Oops...',";
+            echo "    text: 'Your account is not yet verified! Please check your email.'";
+            echo "})";
+            echo "</script>";
+            header('Location: ./index.php');
+        }
     }
 }
