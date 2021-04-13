@@ -30,6 +30,7 @@
         echo '        </div>';
         echo '    </div>';
         echo '</div> ';
+        include './aboutus.php';
     } else {
         echo '<div class="container"';
         echo '<div class="card"">';

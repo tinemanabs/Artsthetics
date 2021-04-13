@@ -15,32 +15,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 5rem;
-  color: white;
-  padding-top: 1rem;
-}
-
-.navbar-nav .nav-item .nav-link {
-  color: white !important;
-}
-
-.navbar-nav .nav-item a:hover:not(.active) {
-  color: #c5847e !important;
-}
-
-#activeAboutUs {
-  background-color: #986545 !important;
-  border-radius: 10px;
-  color: white !important;
-}
-
-@media (max-width: 640px) {
-  .navbar-nav {
-    margin-left: 1rem;
-  }
-  .navbar-nav .nav-item .nav-link {
-    color: #986545 !important;
-  }
+  font-size: 3rem;
+  color: #986545;
+  padding-top: 2rem;
+  font-weight: 700;
 }
 
 /* MISSION AND VISION STATEMENT */

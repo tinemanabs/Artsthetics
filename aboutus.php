@@ -2,33 +2,20 @@
 <html lang="en">
 
 <head>
-    <?php
-    require_once './web/header.php';
-    ?>
-
-    <link rel="stylesheet" href="css/aboutus.css?v=3">
-    <title>About Us</title>
+    <link rel="stylesheet" href="css/aboutus.css?v=5">
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('img/bg.jpg'); background-size:cover; height:45vh;">
-        <?php 
-            require_once "./web/navbar.php";
-        ?>
-
-        <div class="bg-title">ABOUT US</div>
-    </div>
-
+    <div class="bg-title">About Us</div>
     <div class="vision-mission-container">
         <div class="grid-container">
             <div class="left-container">
                 <div class="mission-statement">
                     <div class="mission-header">Our Mission</div>
                     <hr>
-                    <div class="mission-details">Build a better community by showcasing each 
-                        individual's creativity and artistry in all forms of medium and serve a platform that 
-                    engages artist into their passion, making the art community be appreciated in the society.</div>
+                    <div class="mission-details">Build a better community by showcasing each
+                        individual's creativity and artistry in all forms of medium and serve a platform that
+                        engages artist into their passion, making the art community be appreciated in the society.</div>
 
                 </div>
                 <div class="mission-image">
@@ -43,7 +30,7 @@
                     <hr>
                     <div class="vision-details">Be the voice and the representation of art enthusiasts and artists
                         by allowing them to exhibit their creative works and masterpiece. Give artists the opportunity to influence
-                    aspiring artists and even the society. </div>
+                        aspiring artists and even the society. </div>
                 </div>
             </div>
 

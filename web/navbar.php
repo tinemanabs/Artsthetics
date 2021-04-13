@@ -25,9 +25,6 @@
         echo '                  <a class="nav-link" href="index.php" id="activeHome">Home</a>';
         echo '              </li>';
         echo '              <li class="nav-item">';
-        echo '                  <a class="nav-link" href="aboutus.php" id="activeAboutUs">About Us</a>';
-        echo '              </li>';
-        echo '              <li class="nav-item">';
         echo '                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#login">';
         echo '                      Login';
         echo '                  </a>';
@@ -60,10 +57,10 @@
         echo '                    <a class="profile-icon" href="#" onclick="profilePopup()"><i class="fas fa-user-circle" id="profileIcon"></i></a>';
         echo '                </li>';
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link-phone" href="profile.php">Profile</a>';
+        echo '                    <a class="nav-link-phone" href="profile.php" id="activeProfile">Profile</a>';
         echo '                </li>';
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link-phone" href="editprofile.php">Edit Profile</a>';
+        echo '                    <a class="nav-link-phone" href="editprofile.php" id="activeEditProfile">Edit Profile</a>';
         echo '                </li>';
         echo '                <li class="nav-item">';
         echo '                    <a class="nav-link-phone" href="includes/logout.inc.php">Logout</a>';

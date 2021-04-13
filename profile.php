@@ -7,7 +7,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/profile.css?v=3">
+    <link rel="stylesheet" href="css/profile.css?v=2">
     <title>Profile</title>
 </head>
 
@@ -20,107 +20,97 @@
     require_once './web/optionspopup.php';
     ?>
 
-    <?php if(isset($_SESSION["uname"])): ?>
-    <div class="profile-container" style="margin-top: -4.8rem;">
-        <div class="profile">
-            <div class="profile-image">
-                <img src="img/rob.jpg" alt="">
+    <?php if (isset($_SESSION["uname"])) : ?>
+        <div class="profile-container">
+            <div class="profile">
+                <div class="profile-bio">
+                    <div class="profile-bio-info">
+                        <div class="profile-real-name">Welcome, <span><?php echo $_SESSION["fullname"] . "!" ?></span></div>
+                        <div class="profile-user-name"><i class="fas fa-paint-brush"></i>@<?php echo $_SESSION["uname"] ?></div>
+                        <hr style="display:none;">
+                        <div class="profile-upload-form">
+                            <form action="profile.php" method="post" class="profile-form" style="border: none;" enctype="multipart/form-data">
+                                <input type="file" name="file" id="file">
+
+                                <?php
+                                if (isset($_POST["uploadsub"])) {
+                                    $message = "";
+                                    $filename = $_FILES["file"]["name"];
+                                    $fileTmpPath = $_FILES["file"]["tmp_name"];
+                                    $fileExt = $_FILES["file"]["type"];
+                                    $filestr = explode('.', $filename);
+                                    $filetype = strtolower(end($filestr));
+
+                                    $fileExtAllowed = ['jpeg', 'jpg', 'png'];
+                                    $dir = "uploads";
+                                    $dir_handle = opendir($dir);
+
+                                    if (is_dir($dir . "/" . $_SESSION["uname"]) === false) {
+                                        is_resource($dir_handle);
+                                        mkdir($dir . "/" . $_SESSION["uname"]);
+                                    }
+
+                                    $filepath = "uploads/" . $_SESSION['uname'] . "/" . $filename;
+
+                                    if (in_array($filetype, $fileExtAllowed)) {
+                                        if (move_uploaded_file($fileTmpPath, $filepath)) {
+                                            $conn = new mysqli("localhost", "root", "", "Artsthetics");
+                                            $sql = "INSERT INTO user_post (user_id, post_img) VALUES (?,?)";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->bind_param("is", $_SESSION["id"], $filepath);
+                                            $stmt->execute();
+                                            $stmt->close();
+
+                                            echo "<script>";
+                                            echo "Swal.fire(";
+                                            echo "    'Good job!',";
+                                            echo "    'You clicked the button!',";
+                                            echo "    'success'";
+                                            echo ")";
+                                            echo "</script>";
+                                        } else {
+                                            echo "<script>";
+                                            echo "Swal.fire({";
+                                            echo "    icon: 'error',";
+                                            echo "    title: 'Oops...',";
+                                            echo "    text: 'File not uploaded',";
+                                            echo "    footer: '<a href>Why do I have this issue?</a>'";
+                                            echo "})";
+                                            echo "</script>";
+                                        }
+                                    } else {
+                                        echo "<script>";
+                                        echo "Swal.fire({";
+                                        echo "    icon: 'error',";
+                                        echo "    title: 'Oops...',";
+                                        echo "    text: 'Something went wrong!',";
+                                        echo "    footer: '<a href>Why do I have this issue?</a>'";
+                                        echo "})";
+                                        echo "</script>";
+                                    }
+                                }
+                                ?>
+
+                                <button class="profile-edit-btn" name="uploadsub" type="submit">Upload Photo </button>
+                                <button class="profile-edit-btn" id="dashboard"><a href="editdashboard.php" class="a-edit">Edit Dashboard</a> </button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="profile-user-settings">
-                <h1 class="profile-user-name"><?php echo $_SESSION["fullname"] ?></h1>
-                <h6 class="profile-user-name">@<?php echo $_SESSION["uname"] ?></h6>
-            </div>
-            <div class="profile-stats">
-                <ul>
-                    <li><span class="profile-stat-count">12</span> posts</li>
-                    <li><span class="profile-stat-count">0</span> followers</li>
-                    <li><span class="profile-stat-count">0</span> following</li>
-
-                </ul>
-
-            </div>
-
-            <div class="profile-bio">
-                <div id="overlay"></div>
-                <form action="profile.php" method="post" class="btn profile-edit-btn" style="border: none;" enctype="multipart/form-data">
-                    <input type="file" name="file" id="file">
-
-                    <?php
-                    if (isset($_POST["uploadsub"])) {
-                        $message = "";
-                        $filename = $_FILES["file"]["name"];
-                        $fileTmpPath = $_FILES["file"]["tmp_name"];
-                        $fileExt = $_FILES["file"]["type"];
-                        $filestr = explode('.', $filename);
-                        $filetype = strtolower(end($filestr));
-
-                        $fileExtAllowed = ['jpeg', 'jpg', 'png'];
-                        $dir = "uploads";
-                        $dir_handle = opendir($dir);
-
-                        if (is_dir($dir . "/" . $_SESSION["uname"]) === false){
-                            is_resource($dir_handle);
-                            mkdir($dir ."/".$_SESSION["uname"]);
-                        }
-
-                        $filepath = "uploads/" . $_SESSION['uname'] . "/" . $filename;
-
-                        if (in_array($filetype, $fileExtAllowed)) {
-                            if (move_uploaded_file($fileTmpPath, $filepath)) {
-                                $conn = new mysqli("localhost", "root", "", "Artsthetics");
-                                $sql = "INSERT INTO user_post (user_id, post_img) VALUES (?,?)";
-                                $stmt = $conn->prepare($sql);
-                                $stmt->bind_param("is", $_SESSION["id"], $filepath);
-                                $stmt->execute();
-                                $stmt->close();
-
-                                echo "<script>";
-                                echo "Swal.fire(";
-                                echo "    'Good job!',";
-                                echo "    'You clicked the button!',";
-                                echo "    'success'";
-                                echo ")";
-                                echo "</script>";
-                            } else {
-                                echo "<script>";
-                                echo "Swal.fire({";
-                                echo "    icon: 'error',";
-                                echo "    title: 'Oops...',";
-                                echo "    text: 'File not uploaded',";
-                                echo "    footer: '<a href>Why do I have this issue?</a>'";
-                                echo "})";
-                                echo "</script>";
-                            }
-                        } else {
-                            echo "<script>";
-                            echo "Swal.fire({";
-                            echo "    icon: 'error',";
-                            echo "    title: 'Oops...',";
-                            echo "    text: 'Something went wrong!',";
-                            echo "    footer: '<a href>Why do I have this issue?</a>'";
-                            echo "})";
-                            echo "</script>";
-                        }
-                    }
-                    ?>
-
-                    <button class="btn profile-edit-btn" name="uploadsub" type="submit">Upload Photo </button>
-                    <button class="btn profile-edit-btn" id="dashboard"><a href="">Edit Dashboard</a> </button>
-                </form>
-            </div>
+            <!-- End of profile section -->
         </div>
-        <!-- End of profile section -->
-    </div>
-    <!-- End of container -->
+        <!-- End of container -->
 
 
+        <hr>
 
 
+        <div class="profile-container">
 
-    <div class="profile-container" style="margin-top: -4rem;">
-
-        <div class="gallery">
-            <?php 
+            <div class="gallery">
+                <?php
                 $conn = new mysqli("localhost", "root", "", "Artsthetics");
                 $sql = "SELECT * FROM user_post WHERE user_id = ?";
                 $stmt = $conn->prepare($sql);
@@ -130,16 +120,10 @@
 
                 $result = $stmt->get_result();
 
-                if ($result->num_rows > 0){
+                if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo '<div class="gallery-item" tabindex="0">';
-                        echo '    <img src='. $row["post_img"] .' class="gallery-image" alt="">';
-                        echo '    <div class="gallery-item-info">';
-                        echo '        <ul>';
-                        echo '            <li> Mona Lisa</li>';
-                        echo '            <li></li>';
-                        echo '        </ul>';
-                        echo '    </div>';
+                        echo '    <img src=' . $row["post_img"] . ' class="gallery-image" alt="">';
                         echo '</div>';
                     }
                 } else {
@@ -161,15 +145,14 @@
                     echo "  })";
                     echo "</script>";
                 }
-            ?>
+                ?>
+
+            </div>
+            <!-- End of gallery -->
 
         </div>
-        <!-- End of gallery -->
-
-        <div class="loader"></div>
-    </div>
-    <!-- End of container -->
-    <?php else: ?>
+        <!-- End of container -->
+    <?php else : ?>
         <div class="container">
             <div class="card">
                 <div class="card-header">404 Page not found</div>
@@ -178,6 +161,6 @@
         </div>
 
     <?php endif; ?>
-    </body>
+</body>
 
 </html>
