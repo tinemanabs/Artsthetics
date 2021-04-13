@@ -120,7 +120,6 @@
                         echo '    <img src=' . $row["post_img"] . ' class="gallery-image" alt="">';
                         echo '<div class="gallery-item-info">';
                         echo '<ul>';
-                        echo '<li> <button name=editpost class="btn btn-primary">Edit</button></li> &nbsp&nbsp&nbsp&nbsp';
                         echo '<li> <button id="delBtn" data-itemid='.$row["post_id"].' class="btn btn-danger delBtn">Delete</button></li>';
                         echo '</ul>';
                         echo '</div>';
