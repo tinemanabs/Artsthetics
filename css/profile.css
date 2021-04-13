@@ -205,15 +205,6 @@ img {
   color: #c5847e;
 }
 
-.profile-bio .profile-upload-form .profile-edit-btn .a-edit {
-  text-decoration: none;
-  color: white !important;
-}
-
-.profile-bio .profile-upload-form .profile-edit-btn .a-edit:hover {
-  color: #c5847e !important;
-}
-
 @media (max-width: 640px) {
   .profile-form,
   .profile-edit-btn {
@@ -264,6 +255,34 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.gallery-item:hover .gallery-item-info,
+.gallery-item:focus .gallery-item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+  display: none;
+}
+
+.gallery-item-info li {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 /* Spinner Animation */

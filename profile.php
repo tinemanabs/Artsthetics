@@ -7,7 +7,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/profile.css?v=2">
+    <link rel="stylesheet" href="css/profile.css?v=7">
     <title>Profile</title>
 </head>
 
@@ -92,7 +92,7 @@
                                 ?>
 
                                 <button class="profile-edit-btn" name="uploadsub" type="submit">Upload Photo </button>
-                                <button class="profile-edit-btn" id="dashboard"><a href="editdashboard.php" class="a-edit">Edit Dashboard</a> </button>
+                              
 
                             </form>
                         </div>
@@ -124,6 +124,11 @@
                     while ($row = $result->fetch_assoc()) {
                         echo '<div class="gallery-item" tabindex="0">';
                         echo '    <img src=' . $row["post_img"] . ' class="gallery-image" alt="">';
+                        echo '<div class="gallery-item-info">';
+                        echo '<ul>';
+                        echo '<li> <button class="btn btn-danger">Delete</button></li>';
+                        echo '</ul>';
+                        echo '</div>';
                         echo '</div>';
                     }
                 } else {
