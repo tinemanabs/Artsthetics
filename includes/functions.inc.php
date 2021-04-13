@@ -183,3 +183,17 @@ function updateUser($conpw, $newpw, $repeatPwd, $sessionpwd, $fname, $bday, $num
         $conn->query($sql);
     }
 }
+
+function reassignPass($uname) {
+    $conn = new mysqli("localhost", "root", "", "Artsthetics");
+    $sql = "SELECT user_pass FROM user_account WHERE user_username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $uname);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()){
+            $_SESSION["pass"] = $row["user_pass"];
+        }
+    }
+}

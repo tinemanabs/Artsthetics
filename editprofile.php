@@ -72,7 +72,7 @@
                             $newpw = $_POST['newPwd'];
                             $repeatPwd = $_POST['repeatPwd'];
 
-                    
+
                             if (empty($conpw) || empty($newpw) || empty($repeatPwd)) {
                                 echo "<script>";
                                 echo "Swal.fire(";
@@ -97,7 +97,7 @@
                                 echo "'warning'";
                                 echo ")";
                                 echo "</script>";
-                            } else{
+                            } else {
                                 echo "<script>";
                                 echo "Swal.fire(";
                                 echo "    'Changes Applied!',";
@@ -106,6 +106,7 @@
                                 echo ")";
                                 echo "</script>";
                                 updateUser($conpw, $newpw, $repeatPwd, $sessionpwd, $fname, $bday, $num);
+                                reassignPass($_SESSION["uname"]);
                             }
                         }
 
