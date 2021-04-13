@@ -16,10 +16,6 @@
     require_once './web/navbar.php';
     ?>
 
-    <?php
-    require_once './web/optionspopup.php';
-    ?>
-
     <?php if (isset($_SESSION["uname"])) : ?>
         <div class="profile-container">
             <div class="profile">

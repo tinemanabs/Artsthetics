@@ -6,17 +6,13 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/home.css?v=8">
+    <link rel="stylesheet" href="css/home.css?v=3">
     <title>Home</title>
 </head>
 
 <body>
     <?php
     require_once './web/navbar.php';
-    ?>
-
-    <?php
-    require_once './web/optionspopup.php';
     ?>
 
     <?php if (isset($_SESSION["uname"])) : ?>

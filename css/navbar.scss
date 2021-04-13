@@ -22,6 +22,10 @@ body {
             font-weight: bold;
             font-size: 1.2rem;
             cursor: pointer;
+
+            i{
+                font-size: 2rem;
+            }
         }
 
         a:hover:not(.active) {
@@ -36,11 +40,39 @@ body {
     }
 }
 
+#homeText, #profileText, #editProfileText, #logoutText{
+    display: none !important;
+}
+
 .navbar-brand {
     img {
         height: 100px;
         width: 130px;
     }
+}
+
+.dropdown-menu{
+    background-color: $third-color;
+    i{
+        color: $font-color;
+        padding-right: 0.5rem;
+    }
+    .dropdown-item{
+        color: $font-color;
+
+        
+        &:hover{
+            background-color: $font-color;
+            color: white !important;
+            padding: 0.3rem;
+            margin: 0 -1rem;
+
+            i{
+                color: white;
+            }
+        }
+    }
+
 }
 
 @media (max-width: $phone) {
@@ -64,6 +96,15 @@ body {
                 transition: all 1ms ease;
             }
         }
+    }
+
+    #homeText, #profileText, #editProfileText, #logoutText{
+        display: block !important;
+        color: $secondary-color;
+    }
+
+    #homeIcon, #profileIcon, #navbarDropdownMenuLink{
+        display: none;
     }
 
     #navbarNavDropdown,

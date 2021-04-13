@@ -7,7 +7,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/editprofile.css?v=3">
+    <link rel="stylesheet" href="css/editprofile.css?v=9">
     <title>Edit Profile</title>
 </head>
 
@@ -15,10 +15,7 @@
     <?php
     require_once './web/navbar.php';
     ?>
-
-    <?php
-    require_once './web/optionspopup.php';
-    ?>
+    
     <?php if (isset($_SESSION["uname"])) : ?>
         <div class="edit-profile">
             <div class="edit-info">

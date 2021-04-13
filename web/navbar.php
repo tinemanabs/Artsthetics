@@ -6,7 +6,7 @@
     require_once './web/header.php';
     ?>
 
-    <link rel="stylesheet" href="css/navbar.css?v=5">
+    <link rel="stylesheet" href="css/navbar.css?v=6">
 </head>
 
 <body>
@@ -47,24 +47,40 @@
         echo '        </button>';
         echo '        <div class="collapse navbar-collapse" id="navbarNavDropdown">';
         echo '            <ul class="navbar-nav">';
+        // Mobile View
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link" aria-current="page" href="home.php"><i class="fas fa-home" id="homeIcon"></i></a>';
+        echo '                    <a class="nav-link " href="home.php" id="homeText">Home</a>';
         echo '                </li>';
+
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link active " aria-current="page" href="home.php" id="homeText">Home</a>';
+        echo '                    <a class="nav-link " href="profile.php" id="profileText">Profile</a>';
         echo '                </li>';
+
         echo '                <li class="nav-item">';
-        echo '                    <a class="profile-icon" href="#" onclick="profilePopup()"><i class="fas fa-user-circle" id="profileIcon"></i></a>';
+        echo '                    <a class="nav-link " href="editprofile.php" id="editProfileText">Edit Profile</a>';
         echo '                </li>';
+
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link-phone" href="profile.php" id="activeProfile">Profile</a>';
+        echo '                    <a class="nav-link " href="includes/logout.inc.php" id="logoutText">Logout</a>';
         echo '                </li>';
+
+        // Desktop View
         echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link-phone" href="editprofile.php" id="activeEditProfile">Edit Profile</a>';
-        echo '                </li>';
-        echo '                <li class="nav-item">';
-        echo '                    <a class="nav-link-phone" href="includes/logout.inc.php">Logout</a>';
-        echo '                </li>';
+        echo '                    <a class="nav-link" href="home.php"><i class="fas fa-home" id="homeIcon"></i></a>';
+        echo '                </li>';                         
+        echo '                <li class="nav-item dropdown">';
+        echo '                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+        echo '                        <i class="fas fa-user-circle" id="profileIcon"></i>';
+        echo '                    </a>';
+        echo '                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
+        echo '                        <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user-circle"></i>Profile</a></li>';
+        echo '                        <li><a class="dropdown-item" href="editprofile.php"> <i class="fas fa-user-edit"></i>Edit Profile</a></li>';
+        echo '                      <li>';
+        echo '                          <hr class="dropdown-divider">';
+        echo '                      </li>';
+        echo '                        <li><a class="dropdown-item" href="includes/logout.inc.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>';
+        echo '                     </ul>';
+        echo '                 </li>';
         echo '            </ul>';
         echo '        </div>';
         echo '    </div>';

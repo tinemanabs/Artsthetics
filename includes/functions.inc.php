@@ -129,7 +129,7 @@ function loginUser($uname, $pass)
             echo "Swal.fire({";
             echo "    icon: 'error',";
             echo "    title: 'Oops...',";
-            echo "    text: 'Your account is not yet verified! Please check your email.'";
+            echo "    text: 'Your account is not yet verified! Please check your email.'";  
             echo "})";
             echo "</script>";
             header('Location: ./index.php');

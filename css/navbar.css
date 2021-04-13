@@ -20,6 +20,10 @@ body {
   cursor: pointer;
 }
 
+.navbar-nav .nav-item .nav-link i {
+  font-size: 2rem;
+}
+
 .navbar-nav .nav-item a:hover:not(.active) {
   border-radius: 10px;
   color: #c5847e;
@@ -27,9 +31,37 @@ body {
   transition: all 500ms ease;
 }
 
+#homeText, #profileText, #editProfileText, #logoutText {
+  display: none !important;
+}
+
 .navbar-brand img {
   height: 100px;
   width: 130px;
+}
+
+.dropdown-menu {
+  background-color: #f5f1e5;
+}
+
+.dropdown-menu i {
+  color: #986545;
+  padding-right: 0.5rem;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #986545;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #986545;
+  color: white !important;
+  padding: 0.3rem;
+  margin: 0 -1rem;
+}
+
+.dropdown-menu .dropdown-item:hover i {
+  color: white;
 }
 
 @media (max-width: 640px) {
@@ -47,6 +79,13 @@ body {
     color: #986545;
     -webkit-transition: all 1ms ease;
     transition: all 1ms ease;
+  }
+  #homeText, #profileText, #editProfileText, #logoutText {
+    display: block !important;
+    color: #c5847e;
+  }
+  #homeIcon, #profileIcon, #navbarDropdownMenuLink {
+    display: none;
   }
   #navbarNavDropdown,
   .navbar-toggler {
