@@ -140,3 +140,46 @@ function loginUser($uname, $pass)
         }
     }
 }
+
+/*========================
+======= EDIT PROFILE =====
+=========================*/
+
+function emptyResetPwd($conpw, $newpw, $repeatPwd){
+    if(empty($conpw) || empty($newpw) || empty($repeatPwd)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+}
+function currpwdMatch($sessionpwd, $conpw){
+    if($sessionpwd != $conpw){
+        $result = true;
+    }else{
+        $result = false;
+    }
+}
+
+function newpwdMatch($newpw, $repeatPwd){
+    if($newpw != $repeatPwd){
+        $result = true;
+    }else{
+        $result = false;
+    }
+}
+
+function updateUser($conpw, $newpw, $repeatPwd, $sessionpwd, $fname, $bday, $num){
+    if ($conpw === $sessionpwd && $newpw === $repeatPwd){
+        $sessionUname = $_SESSION['uname'];
+
+        $conn = new mysqli("localhost", "root", "", "Artsthetics");
+        $sql = "UPDATE user_account SET 
+        user_fullname = '$fname', 
+        user_bday = '$bday', 
+        user_contact= '$num', 
+        user_pass = '$newpw'  
+        WHERE user_username = '$sessionUname'";
+
+        $conn->query($sql);
+    }
+}

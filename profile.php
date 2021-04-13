@@ -59,8 +59,8 @@
 
                                             echo "<script>";
                                             echo "Swal.fire(";
-                                            echo "    'Good job!',";
-                                            echo "    'You clicked the button!',";
+                                            echo "    'Image Uploaded!',";
+                                            echo "    'Check your dashboard!',";
                                             echo "    'success'";
                                             echo ")";
                                             echo "</script>";
@@ -69,8 +69,7 @@
                                             echo "Swal.fire({";
                                             echo "    icon: 'error',";
                                             echo "    title: 'Oops...',";
-                                            echo "    text: 'File not uploaded',";
-                                            echo "    footer: '<a href>Why do I have this issue?</a>'";
+                                            echo "    text: 'File not uploaded'";
                                             echo "})";
                                             echo "</script>";
                                         }
@@ -79,8 +78,7 @@
                                         echo "Swal.fire({";
                                         echo "    icon: 'error',";
                                         echo "    title: 'Oops...',";
-                                        echo "    text: 'Something went wrong!',";
-                                        echo "    footer: '<a href>Why do I have this issue?</a>'";
+                                        echo "    text: 'No image file to add!'";
                                         echo "})";
                                         echo "</script>";
                                     }
@@ -129,23 +127,12 @@
                         echo '</div>';
                     }
                 } else {
-                    echo "<script>";
-                    echo "Swal.fire({";
-                    echo "    title: '<strong>HTML <u>example</u></strong>',";
-                    echo "    icon: 'info',";
-                    echo "    html:";
-                    echo "      '<b>No items to display yet!</b>, ' +";
-                    echo "    showCloseButton: true,";
-                    echo "    showCancelButton: true,";
-                    echo "    focusConfirm: false,";
-                    echo "    confirmButtonText:";
-                    echo "      '<i class=\"fa fa-thumbs-up\"></i> Great!',";
-                    echo "    confirmButtonAriaLabel: 'Thumbs up, great!',";
-                    echo "    cancelButtonText:";
-                    echo "      '<i class=\"fa fa-thumbs-down\"></i>',";
-                    echo "    cancelButtonAriaLabel: 'Thumbs down'";
-                    echo "  })";
-                    echo "</script>";
+                    echo '<div class="container">';
+                    echo '<div class="card">';
+                    echo '<div class="card-header">No posts yet</div>';
+                    echo '<div class="card-body">Post your first image by uploading a file.</div>';
+                    echo '</div>';
+                    echo '</div>';
                 }
                 ?>
 
