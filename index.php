@@ -71,26 +71,26 @@
         echo '            <img src="img/rob.jpg" class="profile-img">';
     
         echo '            <h3 class="user-name">Robby De Leon</h3>';
-        echo '            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet soluta hic sunt sit reprehenderit.</p>';
+        echo '            <p>Back-end Developer</p>';
         echo '        </div>';
         echo '        <div class="profile">';
         echo '            <img src="img/tine.jpg" class="profile-img">';
     
         echo '            <h3 class="user-name">Christine Manabat</h3>';
-        echo '            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam facilis sint quod.</p>';
+        echo '            <p>Front-End Developer</p>';
         echo '        </div>';
         echo '        <div class="profile">';
         echo '            <img src="img/cy.jpg" class="profile-img">';
     
         echo '            <h3 class="user-name">Cyrix Ponce</h3>';
-        echo '            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eveniet!</p>';
+        echo '            <p>UI and UX Designer</p>';
         echo '        </div>';
     
         echo '        <div class="profile">';
         echo '            <img src="img/theo.jpg" class="profile-img">';
     
         echo '            <h3 class="user-name">Theo Roldan</h3>';
-        echo '            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eveniet!</p>';
+        echo '            <p>UI and UX Designer</p>';
         echo '        </div>';
         echo '    </div>';
         echo '</div>';
