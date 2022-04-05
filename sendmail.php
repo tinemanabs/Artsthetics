@@ -1,8 +1,8 @@
 <?php
 include "phpmailer/PHPMailerAutoload.php";
 
-$gmailUsername = "tinemanabs@gmail.com"; //Gmail username to be use as sender(make sure that the gmail settings was ON or enable)
-$gmailPassword = "tine122599"; //Gmail Password used for the gmail 
+$gmailUsername = "###"; //Gmail username to be use as sender(make sure that the gmail settings was ON or enable)
+$gmailPassword = "###"; //Gmail Password used for the gmail 
 
 
 /////////////////////////////////
